@@ -15,8 +15,7 @@ def lambda_handler(event, context):
         date_str = str(current_date)
         generate_data(current_date, date_str)
         # Upload the generated CSV to S3
-        target_bucket = "customer-debit-card-purchase"
-        upload_to_s3(f"transactions_{date_str}.csv",target_bucket, date_str)
+        upload_to_s3(f"transactions_{date_str}.csv", date_str)
 
     # Connect to RDS, create customers database and customer_transactions table
     connect_and_create_db()
