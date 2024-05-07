@@ -75,20 +75,3 @@ def generate_data(current_date, date_str):
     return
 
 
-
-# Set the current date
-current_date = datetime.now().date()
-num_days = 5
-
-# generate data for 5 days
-# Loop through the 5 days and generate data for each day
-for i in range(num_days):
-    # Convert the current date to a string
-    date_str = current_date.strftime("%Y-%m-%d")
-
-    # Call the generate_data function with the current date and date string
-    generate_data(current_date, date_str)
-
-    # Increment the current date by one day
-    current_date -= timedelta(days=1)
-
