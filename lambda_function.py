@@ -1,7 +1,7 @@
 import json
-from mock_data_generator import *
-from upload_to_s3 import *
-from rds_connect import *
+from mock_data_generator import generate_data
+from upload_to_s3 import upload_to_s3
+from rds_connect import connect_and_create_db
 from datetime import datetime, timedelta
 
 # Set the current date as today
@@ -21,7 +21,7 @@ def lambda_handler(event, context):
         generate_data(current_date, date_str)
 
         # Upload the generated CSV to S3
-        upload_to_s3(f"date = {date_str}.csv", date_str)
+        upload_to_s3(f"transactions_{date_str}.csv", date_str)
 
         # Increment the current date by one day
         current_date += timedelta(days=1)
