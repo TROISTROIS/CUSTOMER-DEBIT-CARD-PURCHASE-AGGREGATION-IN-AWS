@@ -1,7 +1,7 @@
 import boto3
 
 s3 = boto3.client("s3")
-bucket_name = "customer-debit-card-daily-transactions-lambda"
+bucket_name = "customer-debit-card-daily-transactions"
 
 
 def upload_to_s3(filename, date_str):
