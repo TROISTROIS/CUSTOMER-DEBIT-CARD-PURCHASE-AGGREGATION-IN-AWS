@@ -69,9 +69,9 @@ def write_to_csv(data, filename):
 # generate the data and write to csv
 def generate_data(current_date, date_str):
     transactions = generate_transactions(transactions_per_day, current_date)
-    write_to_csv(transactions, f"date = {date_str}.csv")
+    write_to_csv(transactions, f"/tmp/transactions_{date_str}.csv")
 
-    print(f"Generated mock transaction data date = {date_str}.csv and saved in csv files")
+    print(f"Generated mock transaction data transactions_{date_str}.csv and saved in csv files")
     return
 
 
