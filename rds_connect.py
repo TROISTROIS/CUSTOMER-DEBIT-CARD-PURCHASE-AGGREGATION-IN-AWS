@@ -60,7 +60,7 @@ def connect_and_create_db():
 
             cursor = connection.cursor()
 
-
+            # do this in cmd
             cursor.execute("DROP DATABASE TransactionDB")
             # Create a new database
             cursor.execute("CREATE DATABASE TransactionDB")
